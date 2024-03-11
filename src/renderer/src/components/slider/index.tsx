@@ -1,11 +1,13 @@
 import classnames from 'classnames';
-import { CodepenOutlined, ControlOutlined } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
-
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import styles from './style.module.less';
+import { ReactNode } from 'react';
+import { routes } from '@renderer/route';
 
 interface MenuItemProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title?: string;
   active?: boolean;
 }
@@ -21,10 +23,19 @@ const MenuItem = (props: MenuItemProps) => {
 };
 
 export default () => {
+  const { pathname } = useLocation();
   return (
     <div>
-      <MenuItem title="模型" icon={<CodepenOutlined />} active={true} />
-      <MenuItem title="接口" icon={<ControlOutlined />} />
+      {routes.map(({ title, key, icon }) => {
+        const target = '/' + key;
+        const prefix = target + '/';
+        const active = target == pathname || pathname.startsWith(prefix);
+        return (
+          <Link to={target}>
+            <MenuItem title={title} icon={icon} active={active} />
+          </Link>
+        );
+      })}
     </div>
   );
 };

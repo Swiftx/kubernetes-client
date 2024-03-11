@@ -1,7 +1,8 @@
-import { ipcMain } from 'electron';
 import { app, windows } from './component';
+import { ipcLoader } from './loader';
 
-ipcMain.on('ping', () => console.log('pong'));
+// IPC加载
+ipcLoader();
 
 // 主函数
 (async () => {
