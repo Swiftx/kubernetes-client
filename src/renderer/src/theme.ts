@@ -17,7 +17,10 @@ export const theme: ThemeConfig = {
       defaultBorderColor: '#131313',
       defaultHoverBg: '#131313',
       defaultHoverColor: '#fff',
-      defaultHoverBorderColor: '#131313'
+      defaultHoverBorderColor: '#131313',
+      defaultActiveBg: '#131313',
+      defaultActiveColor: '#fff',
+      defaultActiveBorderColor: '#131313'
     },
     Dropdown: {
       colorBgElevated: '#333333',

@@ -8,6 +8,8 @@ import Header from './components/header';
 import { MemoryRouter, Route, Routes } from 'react-router';
 import { theme } from './theme';
 import './main.css';
+import { ClusterPage } from './pages/cluster';
+import { NodePage } from './pages/node';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -22,22 +24,13 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               <SliderMenu />
             </Layout.Sider>
             <Layout.Content className="content">
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              Content
+              <Routes>
+                <Route path="cluster" element={<ClusterPage />}></Route>
+                <Route path="node" element={<NodePage />}></Route>
+              </Routes>
             </Layout.Content>
           </Layout>
         </Layout>
-        {/* <Routes>
-        <Route path="users" element={<Users />}>
-          <Route path=":id" element={<UserProfile />} />
-        </Route>
-      </Routes> */}
       </ConfigProvider>
     </MemoryRouter>
   </React.StrictMode>

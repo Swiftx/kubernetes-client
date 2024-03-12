@@ -10,11 +10,12 @@ import {
   NodeV1Api,
   RbacAuthorizationV1Api,
   SchedulingV1Api,
-  StorageV1Api,
+  StorageV1Api
 } from '@kubernetes/client-node';
 
 const config = new KubeConfig();
 config.loadFromDefault();
+config.currentContext;
 
 export const core = config.makeApiClient(CoreV1Api);
 export const apps = config.makeApiClient(AppsV1Api);
