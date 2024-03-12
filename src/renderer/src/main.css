@@ -22,25 +22,19 @@ body {
 
 .main .slider {
   border-right: 1px solid #3c3c3c;
-  background-color: #1c1c1c;
   text-align: center;
   color: #fff;
 }
 
 .main .header {
   text-align: center;
-  color: #fff;
-  background-color: #1c1c1c;
   border-bottom: 1px solid #3c3c3c;
   -webkit-app-region: drag;
-  height: 35px;
-  line-height: 35px;
   margin: 0;
   padding: 0 16px;
 }
 
 .main .content {
-  background-color: #1c1c1c;
   text-align: center;
   color: #fff;
 }
